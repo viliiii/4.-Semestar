@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    background-color: RGB(34, 77, 98);	
+}
+
+
+
+.container{
+    display: grid;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 2fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: 
+    "logo trkategorija trkategorija trkategorija kosarica"
+    "kategorije naslSlika naslSlika naslSlika naslSlika"
+    "kategorije slikeContainer slikeContainer slikeContainer slikeContainer"
+    "kontakt slikeContainer slikeContainer slikeContainer slikeContainer"
+    "kontakt slikeContainer slikeContainer slikeContainer slikeContainer";
+
+    
+    grid-gap: 0.2rem;
+    font-family: "Inter", sans-serif;
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: 780;
+    
+    
+}
+
+.container div, nav{
+    border:3px solid RGB(108, 172, 204);
+    border-radius: 3%;
+    background-color: RGB(125, 207, 244);
+}
+
+.slikeContainer{
+    
+    grid-area: slikeContainer;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    
+}
+
+.slikeContainer div{
+    border: solid RGB(34, 77, 98);
+    
+}
+
+.slika{
+    grid-area: slika;
+    flex-basis: 15vh;
+    height: 45%;
+    
+    
+}
+
+.slika_prava{
+    /* background-image: url('../images/audi_a1.jpg');*/
+    background-size:cover !important;
+    background-position:center !important; 
+
+    border: solid black !important;
+    height: 75%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.kos_hover{
+   opacity: 0;
+   width: 30%;
+   height: 30%;
+   margin-top: 80%;
+}
+
+.slika_prava:hover .kos_hover{
+    opacity: 1;
+} 
+
+
+
+
+
+.logo{
+    display: flex;
+    
+    grid-area: logo;   
+    text-align: start;
+    font-size: 2.3vh;
+
+
+    background-image: url('..//images/logo_icon.png');
+    background-size:7vh;
+    background-repeat: no-repeat;
+    background-position:right 20% bottom 0%; 
+}
+
+.trenutnaKategorija{
+    grid-area: trkategorija;
+    
+    
+}
+
+.kosarica{
+    grid-area: kosarica;
+    background-image: url('../images/kosarica_icon.png');
+    background-size:7vh;
+    background-repeat: no-repeat;
+    
+    background-position:center;
+    transition: all 0.2s ease-in-out;
+}
+.kosarica:hover{
+    transform: scale(0.9)
+}
+
+.navKategorije{
+    grid-area: kategorije;
+    
+}
+
+
+.naslSlika{
+    grid-area: naslSlika;
+    background-image: url('../images/naslovna_mercedes.jpg');
+    background-size:cover;
+    background-position:center;
+    
+    text-align:start;
+    color: aliceblue;
+    font-size:xx-large;
+
+}
+
+.kontakt{
+    grid-area: kontakt;
+     
+}
+
+li{
+    list-style-type: none;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+    transition: all 0.2s ease-in-out;
+}
+
+li:hover{
+    background-color: RGB(34, 77, 98);
+    background: fill;
+    border-radius: 15%;
+    transform: scale(0.92);
+}
+
+ul{
+    padding: 0 0 0 0;
+    font-size:2ch;
+}
+
+
+
+
+
+@media only screen and (max-width: 550px) {
+    .container{ 
+
+        
+        
+        grid-template-columns: 1fr 1.2fr 1.2fr;
+        grid-template-rows: 0.5fr 0.5fr 2fr 1fr 1fr 1fr 1fr; 
+        grid-template-areas:  
+        "logo none none"
+        "trkategorija trkategorija kosarica" 
+        "naslSlika naslSlika naslSlika"
+        "kategorije slikeContainer slikeContainer "
+        "kategorije  slikeContainer slikeContainer"
+        "kategorije  slikeContainer  slikeContainer"
+        "kontakt  slikeContainer  slikeContainer";
+        
+    } 
+
+    .slika{
+        grid-area: slika;
+        flex-basis: 10vh;
+        height: 27%;
+        
+    
+    }
+
+    
+}
