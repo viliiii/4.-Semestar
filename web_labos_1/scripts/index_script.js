@@ -1,15 +1,8 @@
-/* const slikaPrava = document.querySelectorAll(".slika_prava");
-
-      // petlja koja prolazi kroz svaki div element sa klasom "slika_prava"
-      for (let i = 0; i < slikaPrava.length; i++) {
-        // postavljanje pozadine za svaki div element
-        slikaPrava[i].style.backgroundImage =url('data.categories[0].products[i].image');
-      } */
-
-
-
 const navKategorije = document.querySelector(".navKategorije").querySelectorAll("li");
 
+localStorage.getItem("ukupnakosarica");
+localStorage.setItem("ukupnakosarica", "0");
+/* svakim dodavanjem dodaj u varijablu ukupna suma i stalno azuriraj ukupnu kosaricu */
 
 for(let i=0; i<navKategorije.length; i++){
     navKategorije[i].addEventListener("click", () => {
@@ -17,10 +10,10 @@ for(let i=0; i<navKategorije.length; i++){
         slikeContainer.innerHTML = "";
 
         const trKategorija = document.querySelector(".trenutnaKategorija");
-        console.log(data.categories[i].name);
         trKategorija.innerHTML = data.categories[i].name;
 
         for(let j=0; j<data.categories[i].products.length; j++){
+            
             const slika_div = document.createElement("div");
             slika_div.className = "slika";
 
@@ -32,11 +25,38 @@ for(let i=0; i<navKategorije.length; i++){
             kosarica.className = "kos_hover";
             kosarica.src = "./images/kosarica_icon.png";
 
+            const brojac_div = document.createElement("div");
+            brojac_div.className = "krug_brojac";
+            
+            if(localStorage.getItem(data.categories[i].products[j].name) != null){
+                brojac_div.innerText = localStorage.getItem(data.categories[i].products[j].name);
+            }
+
+            kosarica.addEventListener("click", ()=>{
+                if(localStorage.getItem(data.categories[i].products[j].name) == null){
+                    localStorage.setItem(data.categories[i].products[j].name, 1);
+                    brojac_div.innerText = "1";
+                }else{
+                    let tr_broj = localStorage.getItem(data.categories[i].products[j].name);
+                    tr_broj++;
+                    localStorage.removeItem(data.categories[i].products[j].name);
+                    localStorage.setItem(data.categories[i].products[j].name, tr_broj);
+                    brojac_div.innerText = tr_broj;
+                }
+
+
+                
+            })
+
+
+
+
             const tekst_div = document.createElement("div");
             tekst_div.innerText = data.categories[i].products[j].name;
 
 
             slika_prava.append(kosarica);
+            slika_prava.append(brojac_div);
             slika_div.append(slika_prava);
             slika_div.append(tekst_div);
 
@@ -45,7 +65,50 @@ for(let i=0; i<navKategorije.length; i++){
 
     })
 }
-localStorage.getItem()
+
+const kosarica1 = document.querySelector(".kosarica");
+
+kosarica1.addEventListener("click", () =>{
+    window.location = "../web_labos_1/cart.html"; 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*na svaku kosaricu action listener koji ce na klik na kosaricu 
 dodati ta jproizvod u local storage. Local storage je mapa koja ima kljuc
  i vrijednost koji su

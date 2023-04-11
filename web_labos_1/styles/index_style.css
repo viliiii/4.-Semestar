@@ -71,6 +71,8 @@ body{
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
+
+    position: relative;
 }
 
 .kos_hover{
@@ -119,6 +121,17 @@ body{
 }
 .kosarica:hover{
     transform: scale(0.9)
+}
+
+.krug_brojac{
+    width: 18%;
+
+    right:5% ;
+    top: 80%;
+    right: 5%;
+    position:absolute;
+    border-radius: 50% !important;
+
 }
 
 .navKategorije{
