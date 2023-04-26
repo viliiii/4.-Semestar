@@ -1,0 +1,31 @@
+
+.container{
+    margin-left: 15vw;
+    margin-right: 12vw;
+    background-color: pink;
+    height: 60vh;
+
+}
+
+h1{
+    font-size: 5vh;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5%;
+}
+
+.tekst{
+    font-size: larger;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+label, textarea{
+    margin-left: 5%;
+    margin-right: 1%;
+}
+
+input[value="Save Draft"]{
+    margin-left: 5%;
+}

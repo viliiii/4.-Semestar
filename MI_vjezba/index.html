@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <form action="/u_nista.nigdje">
+        <fieldset>
+            <legend>Prijava u sustav</legend>
+            <div><label for="zaporka">Zaporka:</label>
+                <input type="password" name="zaporka" required  >
+            </div>
+            <div><label for="telefon">Telefon:</label>
+                <input type="text" name="telefon">
+            </div>
+            <div>
+                <label for="uloga">Uloga:</label>
+                <input type="radio" name="uloga" value="admin"><span>Administrator</span>
+                <input type="radio" name="uloga" value="user"><span>Korisnik</span>
+                <input type="radio" name="uloga" value="guest" checked><span>Gost</span>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

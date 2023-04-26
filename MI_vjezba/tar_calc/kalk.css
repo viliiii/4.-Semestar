@@ -1,0 +1,85 @@
+body {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.container {
+    position: absolute;
+    left: 30vw;
+    right: 30vw;
+    top: 10vh;
+
+
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: rgba(244, 239, 236, 0.447);
+
+    display: grid;
+    justify-content: stretch;
+    align-items: center;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.6fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container div {
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 5px;
+
+
+    border: 1.5px solid grey; 
+}
+
+#display {
+    grid-column: 1/5;
+    height: 100%;
+
+    background-color: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: end;
+
+}
+
+#equal {
+    grid-row: 3/7;
+    grid-column: 4/5;
+    height: 100%;
+    background-color: rgba(155, 65, 21, 0.86);
+    color: white;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.operacija {
+    background-color: rgba(164, 167, 173, 0.785);
+}
+
+.number:active {
+    background-color: rgb(104, 42, 3);
+    color: white;
+}
+
+.operacija:active {
+    background-color: rgb(87, 87, 92);
+}
+
+.decimal:active {
+    background-color: rgb(104, 42, 3);
+    color: white;
+}
+
+#equal:active {
+    background-color: rgb(239, 88, 6);
+}
+
+.delete:active {
+    background-color: rgba(144, 7, 7, 0.832);
+}

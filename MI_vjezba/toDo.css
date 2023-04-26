@@ -1,0 +1,87 @@
+body{
+    margin: 0px;
+    padding: 0px;  
+}
+
+.container div {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+
+}
+
+ul{
+    position: relative;
+    padding-top: 1vh;
+    padding-left: 25vw;
+    padding-right: 25vh;
+    padding-bottom: 50vh;
+}
+
+
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr;
+    grid-template-areas: 
+    "divgreen divred";
+}
+
+
+.green{
+    background-color: rgba(59, 221, 10, 0.418); 
+    grid-area: divgreen;
+    
+    justify-content: center;
+    
+    
+
+}
+
+.red{
+    background-color: rgba(255, 0, 0, 0.459);
+    grid-area: divred;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px){
+    .container{
+        
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 1fr;
+        grid-template-areas: 
+        "divgreen"
+        "divred";
+
+        grid-gap: 7vh;
+    }   
+    
+    .container div{
+        
+        height: 40vh;
+    
+        
+    }
+
+    ul{
+        padding-top: 22vh;
+        padding-left:50vw;
+        padding-right: 25vh;
+    }
+    
+    .green{
+        margin-top: 5vh;
+    }
+
+    .red{
+        margin-top: 6.5vh;
+    }
+    
+}

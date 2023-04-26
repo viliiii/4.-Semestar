@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            /*cijelu sirinu cijelu visinu*/
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-template-rows: 50px 1.5fr 1.5fr 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            grid-template-areas:
+                "logo aktivna aktivna aktivna aktivna kosarica"
+                "biranje_kategorija slikica slikica slikica slikica slikica"
+                "biranje_kategorija slikica slikica slikica slikica slikica"
+                "kontakt slike_hrane  slike_hrane slike_hrane slike_hrane slike_hrane"
+                "kontakt  slike_hrane slike_hrane slike_hrane slike_hrane slike_hrane"
+                "none slike_hrane slike_hrane slike_hrane slike_hrane slike_hrane"
+
+        }.slike_hrane {
+            grid-area: slike_hrane;
+            display: flex;
+            justify-content: space-round;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+        }
+        .logo {
+            grid-area: logo;
+        }
+
+        .aktivna {
+            grid-area: aktivna;
+        }
+
+        .slikica {
+            grid-area: slikica;
+        }
+        .biranje_kategorija {
+            background-color: rgb(2, 156, 120);
+            grid-area: biranje_kategorija;
+            padding: 0%;
+        }
+
+
+        .kontakt {
+            grid-area: kontakt;
+        }
+
+        .kosarica {
+            grid-area: kosarica;
+        }
+
+        .produkt {
+            grid-area: produkt;
+            width: 20vh;
+            height: 10vh;
+        }
+
+        .container div {
+            
+            border: 1px solid black;
+        }
+        ul{
+            list-style-type: none;
+            float: left;
+            float: inherit;
+            padding: 5px;
+        }
+
+        li {
+            position: relative;
+            text-align: center;
+            
+            top: -14px;
+            border: 1px solid rgb(2, 156, 120);
+            background-color: rgb(0, 255, 191);
+            padding: 6px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .container {
+                display:grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 0.5fr 0.5fr 2fr 1fr 1fr 1fr 1fr;                
+                grid-template-areas:
+                    "logo none none"
+                    "aktivna aktivna  kosarica"
+                    "slikica slikica slikica"
+                    "biranje_kategorija slike_hrane slike_hrane"
+                    "biranje_kategorija slike_hrane slike_hrane"
+                    "biranje_kategorija  slike_hrane slike_hrane "
+                    "kontakt slike_hrane slike_hrane "
+            }
+            .slike_hrane {
+                grid-area: slike_hrane;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: 
+                "produkt produkt"
+                "produkt produkt"
+                "produkt"
+
+            }        
+            .produkt {
+                /*flex: 25%;*/
+                grid-area: produkt;
+            }
+            ul{
+                list-style-type: none;
+                float: left;
+                float: inherit;
+                padding: 5px;
+                align-self: center;
+            }
+            li {
+                position: relative;
+                text-align: center;
+                align-self: center;
+                
+                border: 1px solid rgb(2, 156, 120);
+                background-color: rgb(0, 255, 191);
+                padding: 5px;
+            }
+        }
+
+        
+
+        /*.header{
+            display :grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            padding: 10px;
+
+            grid-column-start: 1;
+            grid-column-end: 4;
+         }
+         .biranje_kategorija{
+            grid-row: 2 / 5;
+         }
+         .slikica{
+            grid-column: 2 / 7;
+            grid-row: 2 / 4;
+         }
+         .slike_hrane{
+            grid-column: 2 / 7;
+            grid-row: 4 / 8;
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+         }
+         .produkt{
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+         }
+         .logo{
+            grid-column: 1 / 2;
+            box-sizing: border-box;
+            height: 50px;
+            gap: 10px;
+            padding: 10px;
+         }
+         .aktivna{
+            box-sizing: border-box;
+            height: 50px;
+            gap: 10px;
+            padding: 10px;
+            grid-column: 2 / 6;
+         }
+         .kosarica{
+            box-sizing: border-box;
+            height: 50px;
+            gap: 10px;
+            padding: 10px;
+         }
+         .kontakt{
+            box-sizing: border-box;
+   
+            gap: 10px;
+            padding: 10px;
+            grid-row: 5 / 6;
+         }*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="logo"> LOGO</div>
+        <div class="aktivna"> AKTIVNA KATEGORIJA</div>
+        <div class="kosarica"> kosarica</div>
+
+
+        <div class="biranje_kategorija">
+            <ul>
+                <li>kategorija 1</li>
+                <li>kategorija 2</li>
+                <li>kategorija 3</li>
+                <li>kategorija 4</li>
+                <li>kategorija 5</li>
+                <li>kategorija 6</li>
+                <li>kategorija 7</li>
+                <li>kategorija 8</li>
+                <li> <a href="C:\Users\miacr\Downloads\WhatsApp Slika 2023-03-11 u 17.08.33.jpg">kategorija 9</a> </li>
+            </ul>
+        </div>
+        <div class="kontakt"> kontakt slikice</div>
+        <div class="slikica">moja slikica</div>
+
+        <div class="slike_hrane">
+            <div class="produkt">jedan</div>
+            <div class="produkt">dva</div>
+            <div class="produkt">tri</div>
+            <div class="produkt">cetiri</div>
+            <div class="produkt">pet</div>
+        </div>
+    </div>
+</body>
+
+</html>

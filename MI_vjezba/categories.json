@@ -1,0 +1,5 @@
+[
+    {"CategoryId": 1, "CategoryName": "IT Equipment"}, 
+    {"CategoryId": 2, "CategoryName": "Drinks"}, 
+    {"CategoryId": 3, "CategoryName": "Food"}
+  ]
