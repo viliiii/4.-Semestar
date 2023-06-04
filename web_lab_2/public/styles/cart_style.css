@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    background-color: RGB(34, 77, 98);
+}
+
+
+
+.container{
+    display: grid;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 2fr;
+    grid-template-areas: 
+    "naslSlika"
+    "kosarica_div";
+
+    
+    grid-gap: 0.2rem;
+    font-family: "Inter", sans-serif;
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: 780;
+    
+    
+}
+
+.container div{
+    border:3px solid RGB(108, 172, 204);
+    border-radius: 3%;
+    background-color: RGB(125, 207, 244);
+}
+
+.naslSlika{
+    grid-area: naslSlika;
+    background-image: url('../images/naslovna_mercedes.jpg');
+    background-size:cover;
+    background-position:center;
+
+
+}
+
+
+
+.kosarica_div{
+    grid-area: kosarica_div;
+    
+    
+}
+
+
+.proizvodi{
+    border:8px solid RGB(108, 172, 204) !important;
+    border-radius: 3%;
+    /* margin-top: 6%;
+    width: 80%;
+    margin-bottom: 6%;
+    padding-right: 7%;
+    padding-top: 1%; */
+
+    padding:1% ;
+
+    margin:5%;
+    height: 80%;
+    
+}
+
+
+.naziv_kolicina{
+    
+
+    display: grid;
+    box-sizing: border-box;
+
+    grid-template-columns: 3fr 1fr 1fr 0.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "naziv none none minus kolicina plus";
+
+    border: none !important;
+    
+    grid-gap: 0.2rem;
+
+    margin-top: 1vh;
+
+}
+
+
+.naziv{
+    grid-area: naziv;
+    border: none !important;
+}
+
+.minus{
+    grid-area: minus;
+    border: none !important;
+}
+
+.minus:hover{
+    cursor: pointer;
+    
+}
+
+.kolicina{
+    grid-area: kolicina;
+    border: none !important;
+}
+
+.plus{
+    grid-area: plus;
+    border: none !important;
+}
+
+.plus:hover{
+    cursor: pointer;
+}
