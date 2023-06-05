@@ -1,3 +1,4 @@
+const data = require('../data/mydata.js');
 const express = require('express');
 const router = express.Router();
 
@@ -8,12 +9,12 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/:id', function(req, res, next){
+router.get('/proizvodi/:id', function(req, res, next){
     let category;
     let i = 0;
     
     for (let cat of data.categories){
-        if (cat.name === id){
+        if (cat.name === req.params.id){
             category = cat.name;
             break;
         }
@@ -22,10 +23,15 @@ router.get('/:id', function(req, res, next){
     
     res.render('kategorija', {
         title: category, 
-        cat_ind: i
+        cat_ind: i,
+        data: data
 
 
     });
+});
+
+router.get('/add/:id', function(req, res, next){
+    
 });
 
 module.exports = router;

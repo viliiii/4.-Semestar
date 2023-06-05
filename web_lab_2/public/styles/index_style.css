@@ -3,6 +3,10 @@ body{
     background-color: RGB(34, 77, 98);	
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
 
 .container{
@@ -112,7 +116,7 @@ body{
 
 .kosarica{
     grid-area: kosarica;
-    background-image: url('../images/kosarica_icon.png');
+    /* background-image: url('../images/kosarica_icon.png'); */
     background-size:7vh;
     background-repeat: no-repeat;
     
@@ -120,6 +124,10 @@ body{
     transition: all 0.2s ease-in-out;
 
     position: relative;
+}
+
+.kosarica_icon{
+    height: 7.5vh;
 }
 
 .povecalo{

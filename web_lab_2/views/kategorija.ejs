@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebShop</title>
     <link rel="stylesheet" href="/styles/index_style.css">
-    <!-- <script src="..\web_labos_1\scripts\data.js"></script> -->
+    <script src="../data/mydata.js"></script>
 </head>
 
 <body>
@@ -16,23 +16,25 @@
     <div class="container">
         <div class="logo">&nbsp; <p>NPA</p>
         </div>
-        <div class="trenutnaKategorija">ODABERITE KATEGORIJU</div>
-        <div class="kosarica">
+        <div class="trenutnaKategorija"><%=data.categories[cat_ind].name%></div>
+        <div class="kosarica" >
+            
             <div class="ukupni_brojac"></div>
-            <img class="povecalo" src="./images/povecalo.png" alt="povecalo">
+            <img class="povecalo" src="\images\povecalo.png" alt="povecalo">
+            <a href="/cart"><img class="kosarica_icon" src="\images\kosarica_icon.png" alt="kosarica"> </a>
         </div>
         <nav class="navKategorije">
             <ul>
-                <li>Karavan</li>
-                <li>Limuzine</li>
-                <li>Gradski</li>
-                <li>SUV mali</li>
-                <li>SUV veliki</li>
-                <li>Obiteljski</li>
-                <li>Pickup</li>
-                <li>Kabrio</li>
-                <li>Sportski</li>
-                <li>Teretni</li>
+                <li><a href="/proizvodi/Karavan">Karavan</a></li>
+                <li><a href="/proizvodi/Limuzine">Limuzine</a></li>
+                <li><a href="/proizvodi/Gradski">Gradski</a></li>
+                <li><a href="/proizvodi/SUV mali">SUV mali</a></li>
+                <li><a href="/proizvodi/SUV veliki">SUV veliki</a></li>
+                <li><a href="/proizvodi/Obiteljski">Obiteljski</a></li>
+                <li><a href="/proizvodi/Pickup">Pickup</a></li>
+                <li><a href="/proizvodi/Kabrio">Kabrio</a></li>
+                <li><a href="/proizvodi/Sportski">Sportski</a></li>
+                <li><a href="/proizvodi/Teretni">Teretni</a></li>
             </ul>
         </nav>
         <div class="naslSlika">&nbsp; Dobrodošli! Odaberite automobil
@@ -50,8 +52,9 @@
             <%for (var prod of data.categories[cat_ind].products) {%>
 
                 <div class="slika">
-                    <div class="slika_prava" style="background-image: url(<%=prod.image%>)">
-                        <img class="kos_hover" src="../public/images/kosarica_icon.png" alt="kosarica">
+                    <div class="slika_prava" style="background: url('<%=prod.image%>')">
+                        
+                        <a href="/add/<%=prod.name%>"><img class="kos_hover" src="\images\kosarica_icon.png" alt="kosarica"></a>
                         <div class="krug_brojac"></div>
                     </div>
                     <div><%=prod.name%></div>
