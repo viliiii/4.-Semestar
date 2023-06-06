@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,10 @@
     <script src="../data/mydata.js"></script>
     <title>Kosarica</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="naslSlika"></div>
+        <div class="naslSlika"><a href="/">HOME</a></div>
 
         <div class="kosarica_div">
             <div class="proizvodi">
@@ -20,11 +22,27 @@
                     <div class="kolicina">Broj vozila:</div>
                     <div class="plus"></div>
                 </div>
+                <% for (var pro of cart){%>
+                    <div class="naziv_kolicina">
+                        <div class="naziv">
+                            <%=pro.ime%>
+                        </div>
+                        <div class="minus"><a href="/cart/remove/<%=pro.ime%>">-</a></div>
+                        <div class="kolicina">
+                            
+                            <%=pro.kolicina%>
+
+                        </div>
+                        <div class="plus"><a href="/cart/add/<%=pro.ime%>">+</a></div>
+                    </div>
+                    <%}%>
+
             </div>
-            
+
         </div>
 
         <!-- <script src="..\web_labos_1\scripts\cart.js"></script> -->
     </div>
 </body>
+
 </html>

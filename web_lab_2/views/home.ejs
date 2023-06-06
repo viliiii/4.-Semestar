@@ -15,22 +15,33 @@
         <div class="logo">&nbsp; <p>NPA</p> </div>
         <div class="trenutnaKategorija">ODABERITE KATEGORIJU</div>
         <div class="kosarica" >
-            <div class="ukupni_brojac"></div>
+            <div class="ukupni_brojac">
+                <%let br = 0;%>
+                <%if(cart){%>
+                    <% for (var pro of cart){%>
+                        <%br = br + pro.kolicina;%>
+                    <%}%>
+                <%}%>
+                
+                <%if(br > 0){%>
+                    <%=br%>
+                    <%}%>
+            </div>
             <img class="povecalo" src="\images\povecalo.png" alt="povecalo">
-            <a href="/cart"><img class="kosarica_icon" src="\images\kosarica_icon.png" alt="kosarica"> </a>
+            <a href="/cart/getAll"><img class="kosarica_icon" src="\images\kosarica_icon.png" alt="kosarica"> </a>
         </div>
         <nav class="navKategorije">
             <ul>
-                <li><a href="/proizvodi/Karavan">Karavan</a></li>
-                <li><a href="/proizvodi/Limuzine">Limuzine</a></li>
-                <li><a href="/proizvodi/Gradski">Gradski</a></li>
-                <li><a href="/proizvodi/SUV mali">SUV mali</a></li>
-                <li><a href="/proizvodi/SUV veliki">SUV veliki</a></li>
-                <li><a href="/proizvodi/Obiteljski">Obiteljski</a></li>
-                <li><a href="/proizvodi/Pickup">Pickup</a></li>
-                <li><a href="/proizvodi/Kabrio">Kabrio</a></li>
-                <li><a href="/proizvodi/Sportski">Sportski</a></li>
-                <li><a href="/proizvodi/Teretni">Teretni</a></li>
+                <li><a href="/getProducts/Karavan">Karavan</a></li>
+                <li><a href="/getProducts/Limuzine">Limuzine</a></li>
+                <li><a href="/getProducts/Gradski">Gradski</a></li>
+                <li><a href="/getProducts/SUV mali">SUV mali</a></li>
+                <li><a href="/getProducts/SUV veliki">SUV veliki</a></li>
+                <li><a href="/getProducts/Obiteljski">Obiteljski</a></li>
+                <li><a href="/getProducts/Pickup">Pickup</a></li>
+                <li><a href="/getProducts/Kabrio">Kabrio</a></li>
+                <li><a href="/getProducts/Sportski">Sportski</a></li>
+                <li><a href="/getProducts/Teretni">Teretni</a></li>
             </ul>
         </nav>
         <div class="naslSlika">&nbsp; Dobrodošli! Odaberite automobil
